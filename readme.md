@@ -1,6 +1,10 @@
 ## serverless-coffee
 
-configure `serverless`
+```
+yarn add -g serverless
+```
+
+configure serverless credentials
 
 ```
 yarn
