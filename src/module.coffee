@@ -2,7 +2,10 @@ log = (x...) -> try console.log x...
 log '`helo`', new Date
 
 express = require 'express'
+
 app = express()
+app.disable 'x-powered-by'
+app.use(require('compression')())
 
 # ping
 app.get '/', (req,res,next) ->

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.2",
     "express": "^4.16.3",
     "lodash": "^4.17.10",
     "serverless-http": "^1.6.0"
