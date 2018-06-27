@@ -19,5 +19,8 @@ app.get '/err', (req,res,next) ->
 app.use (err,req,res,next) ->
   return res.json(error:err.toString().substr(7))
 
-module.exports.handler = (require 'serverless-http')(app)
+if process.env.LOCAL
+  module.exports = app
+else
+  module.exports.handler = (require 'serverless-http')(app)
 
