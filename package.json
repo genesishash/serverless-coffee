@@ -2,16 +2,25 @@
   "name": "serverless-coffee",
   "version": "1.0.0",
   "description": "",
-  "main": "handler.js",
+  "main": "dist.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "info": "serverless info",
-    "deploy": "serverless deploy -v"
+    "deploy": "webpack && sls deploy -v"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "serverless-http": "^1.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.1",
-    "wegweg": "^0.17.0"
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8"
   }
 }

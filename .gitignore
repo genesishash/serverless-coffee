@@ -1,6 +1,8 @@
 node_modules
+package-lock.json
 jspm_packages
 .serverless
 yarn.lock
+yarn-error.log
 .DS_Store
 
