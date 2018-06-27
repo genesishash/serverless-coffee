@@ -1,9 +1,13 @@
 module.exports = {
+  mode: 'development'
   target: 'node'
+
   output: {
-    filename: 'dist.js'
     path: __dirname
+    filename: 'dist.js'
+    libraryTarget: 'commonjs'
   }
+
   module: {
     rules: [
       {
@@ -21,8 +25,12 @@ module.exports = {
       }
     ]
   }
+
   resolve: {
-    extensions: [".coffee",".js"]
+    extensions: [
+      '.js'
+      '.coffee'
+    ]
   }
 }
 
