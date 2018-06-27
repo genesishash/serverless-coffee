@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.coffee");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1539,15 +1539,26 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 
 /***/ }),
 
-/***/ "./src/index.coffee":
-/*!**************************!*\
-  !*** ./src/index.coffee ***!
-  \**************************/
+/***/ "./src/module.coffee":
+/*!***************************!*\
+  !*** ./src/module.coffee ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar app, express, log;\n\nlog = function log() {\n  try {\n    var _console;\n\n    return (_console = console).log.apply(_console, arguments);\n  } catch (error) {}\n};\n\nlog('`helo`', new Date());\n\nexpress = __webpack_require__(/*! express */ \"./node_modules/express/index.js\");\n\napp = express();\n\n// ping\napp.get('/', function (req, res, next) {\n  return res.json({\n    pong: new Date()\n  });\n});\n\n// call error\napp.get('/err', function (req, res, next) {\n  return next(new Error('Manual error'));\n});\n\n// handle error\napp.use(function (err, req, res, next) {\n  return res.json({\n    error: err.toString().substr(7)\n  });\n});\n\nmodule.exports.handler = __webpack_require__(/*! serverless-http */ \"./node_modules/serverless-http/serverless-http.js\")(app);\n\n//# sourceURL=webpack:///./src/index.coffee?");
+eval("\n\nvar app, express, log;\n\nlog = function log() {\n  try {\n    var _console;\n\n    return (_console = console).log.apply(_console, arguments);\n  } catch (error) {}\n};\n\nlog('`helo`', new Date());\n\nexpress = __webpack_require__(/*! express */ \"./node_modules/express/index.js\");\n\napp = express();\n\n// ping\napp.get('/', function (req, res, next) {\n  return res.json({\n    pong: new Date()\n  });\n});\n\n// call error\napp.get('/err', function (req, res, next) {\n  return next(new Error('Manual error'));\n});\n\n// handle error\napp.use(function (err, req, res, next) {\n  return res.json({\n    error: err.toString().substr(7)\n  });\n});\n\nmodule.exports.handler = __webpack_require__(/*! serverless-http */ \"./node_modules/serverless-http/serverless-http.js\")(app);\n\n//# sourceURL=webpack:///./src/module.coffee?");
+
+/***/ }),
+
+/***/ 0:
+/*!*********************************!*\
+  !*** multi ./src/module.coffee ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__(/*! ./src/module.coffee */\"./src/module.coffee\");\n\n\n//# sourceURL=webpack:///multi_./src/module.coffee?");
 
 /***/ }),
 
