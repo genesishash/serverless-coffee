@@ -1,0 +1,16 @@
+service: serverless-coffee
+
+provider:
+  name: aws
+  stage: dev
+  runtime: nodejs8.10
+  region: us-east-1
+
+functions:
+  ping:
+    handler: handler.ping
+    events:
+      - http:
+          path: ping
+          method: get
+
